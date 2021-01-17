@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingViewController" customModule="Drawing" customModuleProvider="target">
+            <connections>
+                <outlet property="bgBlue" destination="ap3-xI-qUl" id="Vaw-df-xNR"/>
+                <outlet property="bgGreen" destination="D5t-Da-GLH" id="z9n-7g-WlJ"/>
+                <outlet property="bgPink" destination="eaD-bf-bbe" id="2rq-4w-kMx"/>
+                <outlet property="bgRed" destination="LKj-s2-Bfb" id="ip3-VD-LPY"/>
+                <outlet property="bgWhite" destination="g3J-AW-dyD" id="LZ2-t6-cJH"/>
+                <outlet property="bgYellow" destination="bHe-hx-myA" id="VCw-Ou-KwU"/>
+                <outlet property="blue" destination="jDn-c6-7sA" id="yaV-hl-FDz"/>
+                <outlet property="green" destination="LHu-Q0-2uZ" id="3fl-7x-Ydo"/>
+                <outlet property="mainView" destination="31k-bR-9Pb" id="bRw-t6-u6b"/>
+                <outlet property="pink" destination="oe9-8L-jzV" id="U6O-ZP-C5b"/>
+                <outlet property="red" destination="lNM-Ad-t8g" id="lCp-fi-MJu"/>
+                <outlet property="slider" destination="KP9-uS-0Nf" id="eC7-LG-WUf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="white" destination="EnB-LG-She" id="BUy-MD-6z1"/>
+                <outlet property="yellow" destination="HtB-em-Gr8" id="Pe2-uW-IXp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-Nz-nuJ">
+                    <rect key="frame" x="313" y="723" width="81" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="  Undo" image="arrow.uturn.backward" catalog="system">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="undoButtonTapped:" destination="-1" eventType="touchUpInside" id="O0o-Ng-CHr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-WJ-ASH">
+                    <rect key="frame" x="20" y="723" width="81" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="  Clear" image="clear.fill" catalog="system"/>
+                    <connections>
+                        <action selector="clearButtonTapped:" destination="-1" eventType="touchUpInside" id="mgv-bV-nIx"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31k-bR-9Pb" customClass="Canvas" customModule="Drawing" customModuleProvider="target">
+                    <rect key="frame" x="20" y="95" width="374" height="620"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KP9-uS-0Nf">
+                            <rect key="frame" x="252" y="243" width="204" height="201"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="8yA-cq-oU6"/>
+                                <constraint firstAttribute="height" constant="200" id="I35-Sz-W43"/>
+                            </constraints>
+                            <connections>
+                                <action selector="slider:" destination="-1" eventType="valueChanged" id="1gh-xq-0s0"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="KP9-uS-0Nf" secondAttribute="trailing" constant="-80" id="5Ik-34-Sbm"/>
+                        <constraint firstAttribute="height" constant="620" id="B5I-WO-GST"/>
+                        <constraint firstAttribute="width" constant="374" id="Q8h-zH-7mD"/>
+                        <constraint firstItem="KP9-uS-0Nf" firstAttribute="top" secondItem="31k-bR-9Pb" secondAttribute="top" constant="243" id="dxP-ji-bwF"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDn-c6-7sA">
+                    <rect key="frame" x="98" y="778" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="blueColorTapped:" destination="-1" eventType="touchUpInside" id="cFa-P7-CbC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNM-Ad-t8g">
+                    <rect key="frame" x="149" y="778" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <connections>
+                        <action selector="redColorTapped:" destination="-1" eventType="touchUpInside" id="LzW-XW-l4p"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHu-Q0-2uZ">
+                    <rect key="frame" x="206" y="778" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <connections>
+                        <action selector="greenColorTapped:" destination="-1" eventType="touchUpInside" id="rro-S0-Tqu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtB-em-Gr8">
+                    <rect key="frame" x="256" y="778" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <connections>
+                        <action selector="YellowColorTapped:" destination="-1" eventType="touchUpInside" id="UYv-Jj-XtK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe9-8L-jzV">
+                    <rect key="frame" x="306" y="778" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.43656357020547948" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="pinkColorTapped:" destination="-1" eventType="touchUpInside" id="fmv-1d-reh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnB-LG-She">
+                    <rect key="frame" x="360" y="778" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    <connections>
+                        <action selector="whiteColorTapped:" destination="-1" eventType="touchUpInside" id="xTX-RO-XLf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-xI-qUl">
+                    <rect key="frame" x="98" y="823" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="bgBlueColor:" destination="-1" eventType="touchUpInside" id="gOt-5u-aGY"/>
+                        <action selector="blueColorTapped:" destination="-1" eventType="touchUpInside" id="aVx-Bv-Xrj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKj-s2-Bfb">
+                    <rect key="frame" x="149" y="823" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <connections>
+                        <action selector="bgRedColor:" destination="-1" eventType="touchUpInside" id="yox-P6-sw5"/>
+                        <action selector="redColorTapped:" destination="-1" eventType="touchUpInside" id="Ovw-SV-hwM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5t-Da-GLH">
+                    <rect key="frame" x="206" y="823" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <connections>
+                        <action selector="bgGreenColor:" destination="-1" eventType="touchUpInside" id="v69-45-oMH"/>
+                        <action selector="greenColorTapped:" destination="-1" eventType="touchUpInside" id="2wJ-hp-B8O"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHe-hx-myA">
+                    <rect key="frame" x="256" y="823" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <connections>
+                        <action selector="YellowColorTapped:" destination="-1" eventType="touchUpInside" id="q6A-Ha-IET"/>
+                        <action selector="bgYellowColor:" destination="-1" eventType="touchUpInside" id="yB6-FH-hEw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaD-bf-bbe">
+                    <rect key="frame" x="306" y="823" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.43656357019999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="bgPinkColor:" destination="-1" eventType="touchUpInside" id="bO0-4h-aJP"/>
+                        <action selector="pinkColorTapped:" destination="-1" eventType="touchUpInside" id="rsk-uH-3Qu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3J-AW-dyD">
+                    <rect key="frame" x="360" y="823" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    <connections>
+                        <action selector="bgWhiteColor:" destination="-1" eventType="touchUpInside" id="Z5n-gg-JuB"/>
+                        <action selector="whiteColorTapped:" destination="-1" eventType="touchUpInside" id="cg7-Jf-Xbv"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3D4-FU-9Ur">
+                    <rect key="frame" x="20" y="776" width="70" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BG Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKs-5D-Gpe">
+                    <rect key="frame" x="20" y="819" width="70" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drawing Application by implementing our own Canvas view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31B-Ek-3hg">
+                    <rect key="frame" x="0.0" y="44" width="414" height="43"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="ctI-4Z-TgQ"/>
+                        <constraint firstAttribute="width" constant="414" id="l0q-WN-h26"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.18823529410000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="31B-Ek-3hg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4L9-IS-mST"/>
+                <constraint firstItem="31k-bR-9Pb" firstAttribute="top" secondItem="31B-Ek-3hg" secondAttribute="bottom" constant="8" symbolic="YES" id="4b2-ST-Pdl"/>
+                <constraint firstItem="31B-Ek-3hg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ADS-nA-WIt"/>
+                <constraint firstItem="31k-bR-9Pb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KLj-jY-Fk5"/>
+                <constraint firstItem="31B-Ek-3hg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="S5b-F0-a1M"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="31k-bR-9Pb" secondAttribute="trailing" constant="20" id="tzK-UX-cOw"/>
+            </constraints>
+            <point key="canvasLocation" x="-23.188405797101453" y="93.75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.uturn.backward" catalog="system" width="128" height="112"/>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
